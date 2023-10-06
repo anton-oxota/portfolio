@@ -1,0 +1,10 @@
+.circle-icon {
+    @include circle;
+    position: relative;
+
+    &__img {
+        position: absolute;
+        top: 15px;
+        left: 15px;
+    }
+}

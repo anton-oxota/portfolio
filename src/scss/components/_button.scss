@@ -1,0 +1,37 @@
+.button {
+    padding: 12px 25px;
+    background-color: var(--main-color);
+    border: none;
+
+    color: var(--main-text-color);
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 21px;
+
+    cursor: pointer;
+
+    position: relative;
+
+    a {
+        color: inherit;
+        font-size: inherit;
+        font-weight: inherit;
+        line-height: inherit;
+        text-decoration: none;
+        &::before {
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            content: '';
+        }
+    }
+
+    &--no-bg {
+        background-color: unset;
+    }
+
+    @include main-focus-outline;
+
+}

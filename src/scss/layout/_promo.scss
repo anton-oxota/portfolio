@@ -1,0 +1,199 @@
+.promo {
+    position: relative;
+
+    padding-top: 25vh;
+    height: 100vh;
+
+    background-image: url('../img/promo/promo-bg.jpg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+
+    &__header {
+        color: var(--main-text-color);
+        font-size: 48px;
+        font-weight: 700;
+        line-height: 60px;
+
+        margin-top: 3px;
+        width: 435px;
+    }
+
+    &__buttons {
+        margin-top: 25px;
+
+        display: flex;
+        gap: 15px;
+    }
+}
+
+
+/* Promo Navigations */
+
+.open-navigation-button {
+    line-height: 0;
+    background-color: unset;
+    border: unset;
+    cursor: pointer;
+
+    position: absolute;
+    top: 20px;
+    right: 30px;
+
+    @include main-focus-outline;
+}
+
+.close-navigation-button {
+    line-height: 0;
+    background-color: unset;
+    border: unset;
+    cursor: pointer;
+
+    position: absolute;
+    top: 25px;
+    right: 25px;
+
+    @include white-focus-outline;
+}
+
+.promo__menu-overlay {
+    width: 100vw;
+    height: 100vh;
+
+    background: rgba(255, 255, 255, 0);
+
+    position: fixed;
+    top: 0;
+    left: 0;
+
+    transition: .4s all;
+
+    visibility: hidden;
+
+    z-index: 100;
+
+    &.active {
+        visibility: visible;
+        background: rgba(255, 255, 255, 0.75);
+
+        .promo-navigation {
+            left: 0;
+        }
+    }
+}
+
+.promo-navigation {
+    position: absolute;
+    left: -100%;
+    width: 345px;
+    height: 100vh;
+    padding: 140px 0 0 40px;
+    background-color: var(--main-color);
+
+    transition: .4s all;
+
+    &__list {
+        list-style-type: none;
+        padding: 0;
+        margin: 0;
+
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 15px;
+    }
+
+    &__list-link {
+        margin-left: 35px;
+
+        color: #FFF;
+        font-size: 24px;
+        font-weight: 700;
+        line-height: 36px;
+        text-transform: uppercase;
+        text-decoration: unset;
+
+        position: relative;
+
+        @include white-focus-outline;
+
+        &::before {
+            content: '';
+            display: block;
+            width: 15px;
+            height: 15px;
+            position: absolute;
+            top: 50%;
+            left: -35px;
+            transform: translateY(-50%);
+            border-radius: 100%;
+            border: 1px solid black;
+
+            transition: .3s all;
+        }
+
+        &:hover,
+        &:focus {
+            &::before {
+                background-color: white;
+                border: 0px;
+            }
+        }
+    }
+
+    .socials {
+        position: absolute;
+        left: 50%;
+        bottom: 50px;
+        transform: translateX(-50%);
+    }
+}
+
+
+/* Aside */
+
+.aside {
+    height: max-content;
+
+    position: fixed;
+    top: 50%;
+    left: 1.5vw;
+
+    writing-mode: vertical-rl;
+    transform: rotate(180deg) translateY(50%);
+
+    display: flex;
+    align-items: center;
+
+    &__text {
+        display: flex;
+        align-items: center;
+        gap: 15px;
+        margin-bottom: 15px;
+
+        color: var(--main-text-color);
+        font-size: 16px;
+        font-weight: 700;
+        line-height: 24px;
+
+        &::after {
+            content: '';
+            display: block;
+            width: 2px;
+            height: 70px;
+            background-color: black;
+        }
+    }
+
+    .socials {
+        &__link {
+            border-radius: 3px;
+            @include white-focus-outline;
+
+            svg {
+                transform: rotate(90deg);
+            }
+        }
+    }
+
+}

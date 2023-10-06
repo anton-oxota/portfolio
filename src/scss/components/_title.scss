@@ -1,0 +1,39 @@
+.title {
+    width: fit-content;
+    color: var(--main-text-color);
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 24px;
+
+    position: relative;
+    z-index: 0;
+    &--circle-left {
+        padding: 6px 0 6px 10px;
+
+        &::before {
+            content: '';
+            @include circle;
+
+            position: absolute;
+            top: 50%;
+            left: 0;
+            transform: translateY(-50%);
+            z-index: -1;
+        }
+    }
+
+    &--circle-middle {
+        padding: 6px 0;
+
+        &::before {
+            content: '';
+            @include circle;
+
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: -1;
+        }
+    }
+}

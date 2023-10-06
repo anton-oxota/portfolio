@@ -1,0 +1,30 @@
+@mixin circle {
+    display: block;
+    width: 36px;
+    height: 36px;
+    background-color: var(--main-color);
+    border-radius: 100%;
+}
+
+@mixin divider {
+    display: block;
+    width: 60px;
+    height: 3px;
+    background-color: var(--main-color);
+}
+
+@mixin main-focus-outline {
+    &:focus {
+        outline: 3px solid var(--main-color);
+        outline-offset: 2px;
+        
+    }
+}
+
+@mixin white-focus-outline {
+    &:focus {
+        outline: 3px solid white;
+        outline-offset: 2px;
+        
+    }
+}
