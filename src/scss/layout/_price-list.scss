@@ -43,7 +43,6 @@
     
     &__title {
         position: relative;
-        width: 200px;
         &::before {
             content: '';
             display: block;
@@ -60,8 +59,8 @@
     }
 
     &__price {
-        width: 120px;
         text-align: right;
+        text-wrap: nowrap;
     }
 
     &__descr {

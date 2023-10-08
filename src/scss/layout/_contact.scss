@@ -3,13 +3,14 @@
 
     &__wrapper {
         display: flex;
+        align-items: flex-start;
         gap: 70px;
         padding-left: 52px;
     }
 
     &__img {
         width: 400px;
-        height: 600px;
+        aspect-ratio: auto;
     }
 
     &__text {
@@ -79,5 +80,9 @@
         font-size: 12px;
         font-weight: 500;
         line-height: 18px;
+    }
+
+    &__button {
+        justify-self: baseline;
     }
 }

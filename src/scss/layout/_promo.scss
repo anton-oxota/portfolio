@@ -31,6 +31,7 @@
 /* Promo Navigations */
 
 .open-navigation-button {
+    padding: 0;
     line-height: 0;
     background-color: unset;
     border: unset;
@@ -44,6 +45,7 @@
 }
 
 .close-navigation-button {
+    padding: 0;
     line-height: 0;
     background-color: unset;
     border: unset;
@@ -196,4 +198,12 @@
         }
     }
 
+}
+
+/* Aside disable !! */
+
+@media (max-width: 1235px) {
+    .aside {
+        display: none;
+    }
 }

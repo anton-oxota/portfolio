@@ -3,13 +3,20 @@
 
     
     &__wrapper {
-        padding-right: 100px;
         display: flex;
+        align-items: flex-start;
         gap: 70px;
     }
+
     &__img {
         width: 400px;
-        height: 600px;   
+        // height: 600px;  
+        aspect-ratio: auto; 
+        object-fit: cover;
+    }
+
+    &__content {
+        width: 570px;
     }
 
     &__descr {
@@ -24,9 +31,9 @@
         margin-top: 40px;
 
         display: grid;
-        grid-template-columns: repeat(2, 260px);
-        grid-auto-rows: minmax(116px, auto);
-
+        grid-template-columns: repeat(2, auto);
+        grid-auto-rows: auto;
+        justify-content: start;
         gap: 20px 50px;
     }
 }
@@ -35,6 +42,9 @@
     display: grid;
     gap: 24px;
     grid-template-columns: auto 200px;
+    grid-auto-rows: minmax(116px, auto);
+    justify-content: start;
+    align-content: start;
 
     &__title {
         color: var(--main-text-color);

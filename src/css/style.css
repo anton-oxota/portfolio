@@ -134,6 +134,7 @@ body {
 	font-size: 36px;
 	font-weight: 700;
 	line-height: 60px;
+	text-align: center;
 	position: relative;
 }
 .subtitle--divider-left::after {
@@ -157,6 +158,14 @@ body {
 	transform: translateX(-50%);
 }
 
+@media (max-width: 576px) {
+	.subtitle--divider-left::after {
+		bottom: -15px;
+	}
+	.subtitle--divider-middle::after {
+		bottom: -15px;
+	}
+}
 .button {
 	padding: 12px 25px;
 	background-color: var(--main-color);
@@ -260,6 +269,7 @@ body {
 
 /* Promo Navigations */
 .open-navigation-button {
+	padding: 0;
 	line-height: 0;
 	background-color: unset;
 	border: unset;
@@ -274,6 +284,7 @@ body {
 }
 
 .close-navigation-button {
+	padding: 0;
 	line-height: 0;
 	background-color: unset;
 	border: unset;
@@ -401,17 +412,27 @@ body {
 	transform: rotate(90deg);
 }
 
+/* Aside disable !! */
+@media (max-width: 1235px) {
+	.aside {
+		display: none;
+	}
+}
 .about-me {
 	padding-top: 120px;
 }
 .about-me__wrapper {
-	padding-right: 100px;
 	display: flex;
+	align-items: flex-start;
 	gap: 70px;
 }
 .about-me__img {
 	width: 400px;
-	height: 600px;
+	aspect-ratio: auto;
+	object-fit: cover;
+}
+.about-me__content {
+	width: 570px;
 }
 .about-me__descr {
 	margin-top: 20px;
@@ -423,8 +444,9 @@ body {
 .about-me__items-wrapper {
 	margin-top: 40px;
 	display: grid;
-	grid-template-columns: repeat(2, 260px);
-	grid-auto-rows: minmax(116px, auto);
+	grid-template-columns: repeat(2, auto);
+	grid-auto-rows: auto;
+	justify-content: start;
 	gap: 20px 50px;
 }
 
@@ -432,6 +454,9 @@ body {
 	display: grid;
 	gap: 24px;
 	grid-template-columns: auto 200px;
+	grid-auto-rows: minmax(116px, auto);
+	justify-content: start;
+	align-content: start;
 }
 .about-me-item__title {
 	color: var(--main-text-color);
@@ -644,6 +669,7 @@ body {
 	grid-template-columns: repeat(4, 280px);
 	grid-auto-rows: 280px;
 	gap: 5px;
+	justify-content: center;
 }
 .portfolio__item {
 	overflow: hidden;
@@ -725,7 +751,6 @@ body {
 }
 .price-list-item__title {
 	position: relative;
-	width: 200px;
 }
 .price-list-item__title::before {
 	content: "";
@@ -740,8 +765,8 @@ body {
 	transform: translateY(-50%);
 }
 .price-list-item__price {
-	width: 120px;
 	text-align: right;
+	text-wrap: nowrap;
 }
 .price-list-item__descr {
 	color: #000;
@@ -756,12 +781,13 @@ body {
 }
 .contact__wrapper {
 	display: flex;
+	align-items: flex-start;
 	gap: 70px;
 	padding-left: 52px;
 }
 .contact__img {
 	width: 400px;
-	height: 600px;
+	aspect-ratio: auto;
 }
 .contact__text {
 	margin-top: 20px;
@@ -814,6 +840,275 @@ body {
 	font-size: 12px;
 	font-weight: 500;
 	line-height: 18px;
+}
+.form__button {
+	justify-self: baseline;
+}
+
+@media (max-width: 1200px) {
+	.container {
+		width: 960px;
+	}
+	.about-me__wrapper {
+		gap: 25px;
+	}
+	.about-me__content {
+		width: auto;
+	}
+	.about-me__items-wrapper {
+		gap: 20px 15px;
+	}
+	.experience__wrapper {
+		gap: 50px;
+	}
+	.skills__technologies-wrapper {
+		grid-template-columns: repeat(auto-fill, 270px);
+	}
+	.skills__items-wrapper {
+		grid-template-columns: repeat(auto-fill, 350px);
+		justify-content: center;
+		gap: 30px 130px;
+	}
+	.portfolio__wrapper {
+		grid-template-columns: repeat(auto-fill, 280px);
+	}
+	.portfolio__item.horizontally {
+		grid-column: unset;
+	}
+	.portfolio__item.vertically {
+		grid-row: unset;
+	}
+	.price-list__wrapper {
+		gap: 15px 115px;
+	}
+	.contact__img {
+		width: 350px;
+	}
+	.contact__wrapper {
+		gap: 35px;
+	}
+	.form {
+		grid-template-columns: repeat(2, 240px);
+	}
+}
+@media (max-width: 992px) {
+	.container {
+		width: 720px;
+	}
+	.promo {
+		background-position: 55% center;
+	}
+	.about-me__img {
+		width: 200px;
+	}
+	.about-me__items-wrapper {
+		grid-template-columns: repeat(2, auto);
+	}
+	.about-me-item {
+		grid-template-columns: auto 190px;
+		gap: 14px;
+	}
+	.experience__wrapper {
+		gap: 30px;
+	}
+	.experience-item__descr {
+		width: 290px;
+	}
+	.skills__items-wrapper {
+		grid-template-columns: repeat(auto-fill, 300px);
+		gap: 30px;
+	}
+	.price-list__wrapper {
+		grid-template-columns: repeat(2, auto);
+		gap: 15px;
+	}
+	.price-list-item__header {
+		gap: 5px;
+	}
+	.contact__img {
+		display: none;
+	}
+}
+@media (max-width: 768px) {
+	.container {
+		width: 540px;
+	}
+	.promo {
+		background-position: 55% center;
+	}
+	.about-me {
+		padding-top: 50px;
+	}
+	.about-me__wrapper {
+		flex-direction: column;
+		align-items: center;
+	}
+	.about-me__img {
+		aspect-ratio: 1/1.15;
+		width: 400px;
+	}
+	.about-me__items-wrapper {
+		gap: 20px;
+	}
+	.about-me-item {
+		grid-template-columns: repeat(2, auto);
+	}
+	.experience {
+		padding-top: 50px;
+	}
+	.experience__wrapper {
+		margin-top: 50px;
+		flex-direction: column;
+		align-items: center;
+	}
+	.experience__items-wrapper {
+		gap: 25px;
+	}
+	.experience-item__descr {
+		width: 100%;
+	}
+	.skills {
+		padding-top: 50px;
+	}
+	.skills__technologies-wrapper {
+		gap: 10px;
+		grid-template-columns: repeat(auto-fill, 260px);
+	}
+	.skills__items-wrapper {
+		margin-top: 75px;
+		grid-template-columns: repeat(2, 250px);
+		gap: 30px 40px;
+	}
+	.portfolio {
+		padding-top: 50px;
+	}
+	.portfolio__wrapper {
+		grid-template-columns: repeat(auto-fill, 260px);
+		gap: 20px;
+	}
+	.price-list__wrapper {
+		grid-template-columns: repeat(2, 260px);
+		gap: 20px;
+	}
+	.price-list-item__title {
+		width: unset;
+	}
+	.price-list-item__price {
+		width: unset;
+	}
+	.contact {
+		padding-top: 50px;
+	}
+	.contact__wrapper {
+		padding-left: unset;
+	}
+}
+@media (max-width: 576px) {
+	.container {
+		width: 100%;
+		padding: 0 10px;
+	}
+	.subtitle {
+		color: #000;
+		font-size: 24px;
+		font-weight: 700;
+		line-height: 36px;
+	}
+	.promo {
+		background-position: 60% center;
+	}
+	.promo__header {
+		width: 300px;
+		color: #000;
+		font-size: 26px;
+		font-weight: 700;
+		line-height: 39px;
+	}
+	.promo__buttons {
+		margin-top: 32px;
+	}
+	.open-navigation-button {
+		right: 20px;
+	}
+	.promo-navigation {
+		width: 250px;
+		padding: 140px 0 0 20px;
+	}
+	.about-me {
+		margin-top: 40px;
+	}
+	.about-me__items-wrapper {
+		margin-top: 20px;
+		grid-template-columns: auto;
+		gap: 20px;
+	}
+	.about-me__title {
+		margin-top: 40px;
+	}
+	.about-me__subtitle {
+		margin-top: 20px;
+	}
+	.about-me__descr {
+		margin-top: 35px;
+	}
+	.about-me-item {
+		gap: 24px;
+		grid-auto-rows: auto;
+	}
+	.experience {
+		padding-top: 40px;
+	}
+	.experience__subtitle {
+		margin-top: 20px;
+	}
+	.experience__wrapper {
+		margin-top: 55px;
+		gap: 40px;
+	}
+	.skills {
+		padding-top: 40px;
+	}
+	.skills__technologies-wrapper {
+		margin-top: 35px;
+		gap: 20px;
+	}
+	.skills__items-wrapper {
+		margin-top: 40px;
+		grid-template-columns: repeat(auto-fill, 300px);
+		gap: 40px;
+	}
+	.portfolio {
+		padding-top: 40px;
+	}
+	.portfolio__subtitle {
+		margin-top: 20px;
+	}
+	.portfolio__wrapper {
+		margin-top: 55px;
+		gap: 20px;
+	}
+	.price-list__title::after {
+		bottom: -15px;
+	}
+	.price-list__wrapper {
+		margin-top: 35px;
+		grid-template-columns: auto;
+	}
+	.contact {
+		padding-top: 40px;
+		padding-bottom: 50px;
+	}
+	.contact__subtitle {
+		margin-top: 20px;
+		margin-bottom: 35px;
+	}
+	.form {
+		grid-template-columns: 1fr;
+		gap: 28px;
+	}
+	.form__textarea-wrapper {
+		grid-column: unset;
+	}
 }
 
 /*# sourceMappingURL=style.css.map */
