@@ -1102,6 +1102,9 @@ body {
 		margin-top: 20px;
 		margin-bottom: 35px;
 	}
+	.contact__wrapper {
+		justify-content: center;
+	}
 	.form {
 		grid-template-columns: 1fr;
 		gap: 28px;

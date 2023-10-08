@@ -363,9 +363,14 @@
     .contact {
         padding-top: 40px;
         padding-bottom: 50px;
+
         &__subtitle {
             margin-top: 20px;
             margin-bottom: 35px;
+        }
+
+        &__wrapper {
+            justify-content: center;
         }
     }
 
